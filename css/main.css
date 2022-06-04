@@ -12,11 +12,13 @@ body {
   font-size: 1.6rem;
   line-height: 1.6;
   color: #4b5862;
-  font-family: "Overpass", sans-serif; }
+  font-family: "Overpass", sans-serif;
+  overflow-x: hidden;
+  letter-spacing: -0.07rem; }
 
 a {
-  text-decoration: none;
   font-family: "Ubuntu", sans-serif;
+  text-decoration: none;
   font-weight: 500;
   color: inherit; }
 
@@ -26,31 +28,50 @@ ul {
 
 .button {
   display: inline-block;
-  padding: 1.2rem 4rem;
+  padding: 1.6rem 3.2rem;
   background-color: white;
   border-radius: 100px;
-  color: #ff525d; }
+  color: #ff525d;
+  cursor: pointer;
+  border: 0;
+  font-weight: 600; }
+
+.button-secondary {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white; }
+
+.container {
+  margin: 0 auto;
+  max-width: 111rem; }
+  .container-px {
+    padding: 0 2.4rem; }
+  .container-py {
+    padding-top: 9.6rem;
+    padding-bottom: 9.6rem; }
+    @media (min-width: 768px) {
+      .container-py {
+        padding-top: 16rem;
+        padding-bottom: 16rem; } }
 
 header {
+  z-index: 1;
   position: absolute;
   width: 100%;
-  height: 16.8rem;
-  border: 1px solid yellow;
+  height: 14rem;
   display: flex; }
+  @media (min-width: 768px) {
+    header {
+      height: 16.8rem; } }
 
 .topnav {
-  width: 110rem;
-  margin: 0 auto;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
-  display: flex;
-  padding: 0 2.4rem;
-  border: 1px solid green; }
+  display: flex; }
   @media (min-width: 768px) {
     .topnav {
       padding: 3.2rem; } }
-  .topnav > * {
-    border: 1px solid green; }
   .topnav__logo {
     display: inline-block; }
     .topnav__logo img {
@@ -104,6 +125,7 @@ header {
       display: block;
       background-color: white; }
     .topnav__links .dropdown {
+      top: 0;
       color: #25252d;
       background-color: white;
       display: inline-block;
@@ -124,4 +146,116 @@ header {
 
 .hero {
   height: 60rem;
-  background-color: #ff525d; }
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to top, #ff525d, #ff7a85);
+  border-bottom-left-radius: 9.6rem;
+  overflow: hidden; }
+  .hero::before {
+    content: "";
+    background-image: url(../images/bg-pattern-intro-mobile.svg);
+    width: 100%;
+    height: 100%;
+    background-size: 350%;
+    background-repeat: no-repeat;
+    background-position: 31% 42%;
+    position: absolute;
+    top: 0;
+    left: 0; }
+    @media (min-width: 768px) {
+      .hero::before {
+        background-size: 248%;
+        background-position: 32% 50%; } }
+  .hero__title {
+    position: relative;
+    text-align: center; }
+    .hero__title h1 {
+      color: white; }
+    .hero__title p {
+      color: white;
+      font-size: 2rem; }
+  .hero__cta {
+    margin-top: 4.8rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem; }
+    @media (min-width: 768px) {
+      .hero__cta {
+        margin-top: 4.8rem; } }
+
+.feature1 {
+  text-align: center; }
+  .feature1 h2 {
+    margin-bottom: 7.2rem; }
+    @media (min-width: 992px) {
+      .feature1 h2 {
+        margin-bottom: 16rem; } }
+  .feature1__text-item:not(:last-child) {
+    margin-bottom: 6rem; }
+  .feature1__content {
+    display: flex;
+    flex-direction: column; }
+    @media (min-width: 992px) {
+      .feature1__content {
+        display: flex;
+        flex-direction: row;
+        text-align: left; } }
+  .feature1__text {
+    order: 2; }
+    @media (min-width: 992px) {
+      .feature1__text {
+        order: 1;
+        flex: 1; } }
+  .feature1__image {
+    order: 1;
+    margin: 0 auto;
+    margin-bottom: 6rem; }
+    @media (min-width: 992px) {
+      .feature1__image {
+        flex: 1;
+        order: 2;
+        position: relative; } }
+    .feature1__image img {
+      width: 100%; }
+      @media (min-width: 992px) {
+        .feature1__image img {
+          content: url(../images/illustration-editor-desktop.svg);
+          position: absolute;
+          width: 180%;
+          top: -85%;
+          left: 31%; } }
+
+.heading {
+  line-height: 1.2;
+  margin: 0;
+  color: #1f3f5b;
+  font-weight: 600; }
+
+h1,
+.heading-1 {
+  font-size: 4rem; }
+  @media (min-width: 768px) {
+    h1,
+    .heading-1 {
+      font-size: 6.4rem; } }
+
+h2,
+.heading-2 {
+  font-size: 3.2rem; }
+  @media (min-width: 768px) {
+    h2,
+    .heading-2 {
+      font-size: 4rem; } }
+
+h3,
+.heading-3 {
+  font-size: 2.4rem; }
+  @media (min-width: 768px) {
+    h3,
+    .heading-3 {
+      font-size: 3.2rem; } }

@@ -15,12 +15,14 @@ body {
   line-height: 1.6;
   color: $mid-gray;
   font-family: "Overpass", sans-serif;
+  overflow-x: hidden;
+  letter-spacing: -0.07rem;
 }
 
 //links
 a {
-  text-decoration: none;
   font-family: "Ubuntu", sans-serif;
+  text-decoration: none;
   font-weight: 500;
   color: inherit;
 }
@@ -33,18 +35,38 @@ ul {
 //buttons
 .button {
   display: inline-block;
-  padding: 1.2rem 4rem;
+  padding: 1.6rem 3.2rem;
   background-color: $white;
   border-radius: 100px;
   color: $light-red;
+  cursor: pointer;
+  border: 0;
+  font-weight: 600;
 }
 
-//Breakpoints
-// Small tablets and large smartphones (landscape view)
-$screen-sm-min: 576px;
-// Small tablets (portrait view)
-$screen-md-min: 768px;
-// Tablets and small desktops
-$screen-lg-min: 992px;
-// Large tablets and desktops
-$screen-xl-min: 1200px;
+.button-secondary {
+  background-color: transparent;
+  border: 1px solid $white;
+  color: $white;
+}
+
+//container
+
+.container {
+  margin: 0 auto;
+  max-width: 111rem;
+
+  &-px {
+    padding: 0 2.4rem;
+  }
+
+  &-py {
+    padding-top: 9.6rem;
+    padding-bottom: 9.6rem;
+
+    @include md {
+      padding-top: 16rem;
+      padding-bottom: 16rem;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.heading {
+  line-height: 1.2;
+  margin: 0;
+  color: $darker-blue;
+  font-weight: 600;
+}
+
+h1,
+.heading-1 {
+  font-size: $fs-40;
+
+  @include md {
+    font-size: $fs-64;
+  }
+}
+
+h2,
+.heading-2 {
+  font-size: $fs-32;
+
+  @include md {
+    font-size: $fs-40;
+  }
+}
+
+h3,
+.heading-3 {
+  font-size: $fs-24;
+  @include md {
+    font-size: $fs-32;
+  }
+}
