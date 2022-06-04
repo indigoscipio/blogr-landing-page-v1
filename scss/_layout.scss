@@ -427,16 +427,12 @@ header {
     cursor: pointer;
     margin-bottom: 3.2rem;
   }
-  &__links-col {
-  }
 
   &__links-col:not(:last-child) {
     margin-bottom: 4.8rem;
   }
   &__links-title {
     color: $white;
-  }
-  &__links-list {
   }
   a {
     font-weight: 300;
