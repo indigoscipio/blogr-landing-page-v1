@@ -3,7 +3,6 @@ header {
   position: absolute;
   width: 100%;
   height: 14rem;
-  // border: 1px solid yellow;
   display: flex;
 
   @include md {
@@ -17,15 +16,10 @@ header {
   align-items: center;
   justify-content: space-between;
   display: flex;
-  // border: 1px solid green;
 
   @include md {
     padding: 3.2rem;
   }
-
-  // & > * {
-  //   border: 1px solid green;
-  // }
 
   &__logo {
     display: inline-block;
@@ -135,26 +129,15 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to top, $light-red, $lighter-red);
+  background-image: url(../images/bg-pattern-intro-mobile.svg),
+    linear-gradient(to top, $light-red, $lighter-red);
   border-bottom-left-radius: 9.6rem;
-  overflow: hidden;
+  background-position: center;
+  background-size: cover;
 
-  &::before {
-    content: "";
-    background-image: url(../images/bg-pattern-intro-mobile.svg);
-    width: 100%;
-    height: 100%;
-    background-size: 350%;
-    background-repeat: no-repeat;
-    background-position: 31% 42%;
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    @include md {
-      background-size: 248%;
-      background-position: 32% 50%;
-    }
+  @include md {
+    background-size: 248%;
+    background-position: 32% 50%;
   }
 
   &__title {
@@ -185,9 +168,13 @@ header {
   }
 }
 
-//
+//Feature 1
 .feature1 {
   text-align: center;
+
+  .container {
+    padding-bottom: 27rem;
+  }
 
   h2 {
     margin-bottom: 7.2rem;
@@ -240,6 +227,74 @@ header {
         width: 180%;
         top: -85%;
         left: 31%;
+      }
+    }
+  }
+}
+
+//Feature 2
+.feature2 {
+  text-align: center;
+  background: $dark-blue;
+  background-image: url(../images/bg-pattern-circles.svg);
+  background-position: -90px -190px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-right-radius: 9.6rem;
+  border-bottom-left-radius: 9.6rem;
+  position: relative;
+
+  @include lg {
+    background-position: -14% 90%;
+    background-size: 70%;
+  }
+
+  .container {
+    padding-top: 24rem;
+
+    @include lg {
+      padding: 12.8rem 2.4rem;
+    }
+  }
+
+  &__content {
+    @include lg {
+      display: flex;
+      text-align: left;
+    }
+  }
+
+  &__text {
+    color: $white;
+
+    @include lg {
+      flex: 1;
+    }
+    h2 {
+      color: white;
+    }
+  }
+  &__image {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -160px;
+
+    @include lg {
+      left: 2.4rem;
+      transform: none;
+      position: relative;
+      flex: 1;
+    }
+
+    img {
+      width: 32.7rem;
+
+      @include lg {
+        width: 100%;
+        position: absolute;
+        top: -30px;
+        left: -70px;
       }
     }
   }
