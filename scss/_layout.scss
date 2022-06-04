@@ -46,58 +46,86 @@ header {
   }
 
   &__links {
-    margin-left: 4rem;
-    margin-right: auto;
+    padding: 3.2rem 0;
     color: $white;
-    display: none;
-    padding: 0;
     list-style: none;
     position: relative;
+    background-color: white;
+    color: $darkest-gray;
+    width: calc(100% - 4.8rem);
+    position: absolute;
+    left: 24;
+    top: 12.8rem;
+    text-align: center;
+    border-radius: 0.8rem;
+    display: none;
+    box-shadow: #{$bxs-0-16-32};
 
-    @include md {
+    &.active {
       display: block;
-      display: flex;
     }
 
     a {
-      margin-right: 4rem;
+      margin: 0;
+      text-decoration: none;
     }
 
     a::after {
-      content: "";
-      position: absolute;
-      transform: translateY(10px);
-      margin-left: 0.8rem;
-      display: inline-block;
-      width: 2.4rem;
-      height: 2.4rem;
-      background: url(../images/icon-arrow-light.svg);
-      background-repeat: no-repeat;
+      content: none;
     }
 
-    li {
+    @include md {
+      display: flex;
+      margin-left: 4rem;
+      margin-right: auto;
+      background-color: transparent;
+      color: $white;
       position: relative;
-    }
-
-    li:hover > ul,
-    .dropdown:hover {
-      visibility: visible;
-      opacity: 1;
-      display: block;
-      background-color: $white;
-    }
-
-    .dropdown {
+      left: 0;
       top: 0;
-      color: $darkest-gray;
-      background-color: white;
-      display: inline-block;
-      visibility: hidden;
-      opacity: 0;
-      position: absolute;
-      transition: all 0.5s ease;
-      margin-top: 1rem;
-      display: none;
+      text-align: left;
+      box-shadow: none;
+
+      li:hover .dropdown,
+      li:focus-within .dropdown {
+        visibility: visible;
+        opacity: 1;
+        background-color: $white;
+        transform: translateY(0%);
+      }
+
+      .dropdown {
+        transform: translateY(-2em);
+        padding: 3.2rem;
+        border-radius: 0.8rem;
+        top: 5.6rem;
+        display: block;
+        opacity: 0;
+        width: 16.8rem;
+        color: $darkest-gray;
+        background-color: white;
+        position: absolute;
+        transition: all 0.3s ease;
+        margin-top: 1rem;
+        box-shadow: #{$bxs-0-16-32};
+        visibility: hidden;
+      }
+
+      a {
+        margin-right: 4rem;
+      }
+
+      a::after {
+        content: "";
+        position: absolute;
+        transform: translateY(10px);
+        margin-left: 0.8rem;
+        display: inline-block;
+        width: 2.4rem;
+        height: 2.4rem;
+        background: url(../images/icon-arrow-light.svg);
+        background-repeat: no-repeat;
+      }
     }
   }
 
@@ -106,7 +134,18 @@ header {
     color: $white;
 
     @include md {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .button {
+      @include md {
+        width: 6.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
 
     a:not(.button-cta) {
